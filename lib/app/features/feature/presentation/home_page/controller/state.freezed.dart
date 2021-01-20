@@ -365,6 +365,7 @@ class _$Success with DiagnosticableTreeMixin implements Success {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(connectionState);
 
+  @JsonKey(ignore: true)
   @override
   $SuccessCopyWith<Success> get copyWith =>
       _$SuccessCopyWithImpl<Success>(this, _$identity);
@@ -436,6 +437,7 @@ abstract class Success implements HomeState {
   const factory Success(String connectionState) = _$Success;
 
   String get connectionState;
+  @JsonKey(ignore: true)
   $SuccessCopyWith<Success> get copyWith;
 }
 
@@ -497,6 +499,7 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   $ErrorCopyWith<Error> get copyWith =>
       _$ErrorCopyWithImpl<Error>(this, _$identity);
@@ -568,5 +571,6 @@ abstract class Error implements HomeState {
   const factory Error(Failure failure) = _$Error;
 
   Failure get failure;
+  @JsonKey(ignore: true)
   $ErrorCopyWith<Error> get copyWith;
 }
