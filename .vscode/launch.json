@@ -13,15 +13,6 @@
             "program": "lib/main/main_dev.dart"
         },
         {
-            "name": "flutter-prod",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "-t",
-                "lib/main/main_prod.dart"
-            ]
-        },
-        {
             "name": "flutter-test",
             "request": "launch",
             "type": "dart",
