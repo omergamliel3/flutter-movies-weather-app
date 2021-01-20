@@ -7,49 +7,12 @@ import 'package:prospera_exercise/localization/app_localizations.dart';
 
 import '../controller/index.dart';
 
-import '../../../../../core/widgets/loading_widget.dart';
 import '../widgets/widgets.dart';
 
 class HomeView extends StatelessWidget {
   PreferredSizeWidget appBar(BuildContext context) {
     return AppBar(
       title: Text(AppLocalizations.of(context).translate(APP_TITLE)),
-    );
-  }
-
-  Widget buildBody(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.headline4;
-    final initialText = AppLocalizations.of(context).translate(INITIAL_STATE);
-    final successText = AppLocalizations.of(context).translate(SUCCESS_STATE);
-    final failureText = AppLocalizations.of(context).translate(FAILURE_STATE);
-    final connectionText = AppLocalizations.of(context).translate(CONNECTION);
-    final reasonText = AppLocalizations.of(context).translate(REASON);
-
-    return BlocBuilder<HomeViewController, HomeState>(
-      builder: (context, state) {
-        return state.when(
-          initial: () => Center(
-              child: Text(
-            initialText,
-            style: textStyle,
-          )),
-          loading: () => LoadingWidget(),
-          success: (connection) => Center(
-            child: Text(
-              '$successText\n$connectionText: $connection',
-              style: textStyle,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          error: (failure) => Center(
-            child: Text(
-              '$failureText\n$reasonText: ${failure.message}',
-              style: textStyle,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        );
-      },
     );
   }
 
@@ -63,12 +26,12 @@ class HomeView extends StatelessWidget {
           appBar: appBar(context),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildBody(context),
-              const SizedBox(
-                height: 50,
-              ),
-              ThemeButtons()
+            children: const [
+              Center(
+                child: Text(
+                  'HOME PAGE',
+                ),
+              )
             ],
           ),
           floatingActionButton: FAB(),

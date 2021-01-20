@@ -7,8 +7,6 @@ class FAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-        onPressed: () =>
-            BlocProvider.of<HomeViewController>(context).checkConnectivity(),
-        child: const Icon(Icons.wifi));
+        onPressed: () => null, child: const Icon(Icons.movie));
   }
 }

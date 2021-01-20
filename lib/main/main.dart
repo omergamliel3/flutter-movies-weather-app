@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: AppLocalizations.of(context).translate(APP_TITLE),
+              title: 'Prospera Movies',
               theme: lightThemeData(),
               darkTheme: darkThemeData(),
               themeMode: state.when(

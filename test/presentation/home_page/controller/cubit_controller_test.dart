@@ -28,7 +28,7 @@ void main() {
             (realInvocation) => Future.value(ConnectivityResult.wifi));
         return cubitController;
       },
-      act: (cubit) => cubit.checkConnectivity(),
+      act: (cubit) => null,
       expect: [isA<Loading>(), isA<Success>()],
       verify: (_) {
         verifyInOrder(
@@ -50,7 +50,7 @@ void main() {
             (realInvocation) => Stream.fromIterable([ConnectivityResult.none]));
         return cubitController;
       },
-      act: (cubit) => cubit.checkConnectivity(),
+      act: (cubit) => null,
       expect: [isA<Loading>(), isA<Error>()],
       verify: (_) {
         verifyInOrder([
