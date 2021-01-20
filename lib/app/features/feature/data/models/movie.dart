@@ -24,3 +24,5 @@
 //       _$ArticleModelFromJson(json);
 //   Map<String, dynamic> toJson() => _$ArticleModelToJson(this);
 // }
+
+class MovieModel {}
