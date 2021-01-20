@@ -8,20 +8,20 @@ part of 'movie_model.dart';
 
 MovieModel _$MovieModelFromJson(Map<String, dynamic> json) {
   return MovieModel(
-    title: json['title'] as String,
-    year: json['year'] as String,
-    rated: json['rated'] as String,
-    released: json['released'] as String,
-    runtime: json['runtime'] as String,
-    genre: json['genre'] as String,
-    director: json['director'] as String,
-    writer: json['writer'] as String,
-    actors: json['actors'] as String,
-    plot: json['plot'] as String,
-    language: json['language'] as String,
-    country: json['country'] as String,
-    poster: json['poster'] as String,
-    ratings: json['ratings'] as List,
+    title: json['Title'] as String,
+    year: json['Year'] as String,
+    rated: json['Rated'] as String,
+    released: json['Released'] as String,
+    runtime: json['Runtime'] as String,
+    genre: json['Genre'] as String,
+    director: json['Director'] as String,
+    writer: json['Writer'] as String,
+    actors: json['Actors'] as String,
+    plot: json['Plot'] as String,
+    language: json['Language'] as String,
+    country: json['Country'] as String,
+    poster: json['Poster'] as String,
+    ratings: json['Ratings'] as List,
   );
 }
 

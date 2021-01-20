@@ -5,12 +5,17 @@ import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 
 import '../app/core/network/network_info.dart';
-import '../app/features/feature/data/api/api.dart';
+import '../app/features/movies/data/api/api.dart';
 
 import '../app/theme/theme_provider.dart';
 
-import '../app/features/feature/presentation/home_page/controller/cubit_controller.dart';
-import '../app/features/feature/presentation/loading_page/controller/cubit_controller.dart';
+import 'package:prospera_exercise/app/features/movies/data/datasources/remote/movie_remote_datasource.dart';
+import 'package:prospera_exercise/app/features/movies/data/repositories/movie_repository_impl.dart';
+import 'package:prospera_exercise/app/features/movies/domain/repositories/movie_repository.dart';
+import 'package:prospera_exercise/app/features/movies/domain/usecases/get_remote_movie.dart';
+
+import '../app/features/movies/presentation/home_page/controller/cubit_controller.dart';
+import '../app/features/movies/presentation/loading_page/controller/cubit_controller.dart';
 
 part 'injector.g.dart';
 
@@ -54,6 +59,9 @@ abstract class Injector {
   }
 
   // Register Feature module Factories
+  @Register.factory(MovieRemoteDatasource)
+  @Register.factory(MovieRepository, from: MovieRepositoryImpl)
+  @Register.factory(GetRemoteMovie)
   @Register.factory(LoadingViewController)
   @Register.factory(HomeViewController)
   void _configureFeatureModuleFactories();

@@ -12,7 +12,7 @@ class ImageHandlerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return KeepAliveWrapper(
       child: ClipRRect(
-          borderRadius: BorderRadius.circular(24.0),
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(8.0)),
           child: AspectRatio(
             aspectRatio: 1,
             child: FadeInImage.assetNetwork(

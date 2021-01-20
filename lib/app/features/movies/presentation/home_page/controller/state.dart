@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:prospera_exercise/app/features/movies/domain/entities/movie.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../core/errors/failure.dart';
@@ -9,6 +10,6 @@ part 'state.freezed.dart';
 abstract class HomeState with _$HomeState {
   const factory HomeState.initial() = Initial;
   const factory HomeState.loading() = Loading;
-  const factory HomeState.success(String connectionState) = Success;
+  const factory HomeState.success(Movie movie) = Success;
   const factory HomeState.error(Failure failure) = Error;
 }

@@ -24,9 +24,9 @@ class _$HomeStateTearOff {
   }
 
 // ignore: unused_element
-  Success success(String connectionState) {
+  Success success(Movie movie) {
     return Success(
-      connectionState,
+      movie,
     );
   }
 
@@ -48,14 +48,14 @@ mixin _$HomeState {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(String connectionState),
+    @required TResult success(Movie movie),
     @required TResult error(Failure failure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(String connectionState),
+    TResult success(Movie movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   });
@@ -135,7 +135,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(String connectionState),
+    @required TResult success(Movie movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -150,7 +150,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(String connectionState),
+    TResult success(Movie movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
@@ -241,7 +241,7 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(String connectionState),
+    @required TResult success(Movie movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -256,7 +256,7 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(String connectionState),
+    TResult success(Movie movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
@@ -307,7 +307,7 @@ abstract class Loading implements HomeState {
 abstract class $SuccessCopyWith<$Res> {
   factory $SuccessCopyWith(Success value, $Res Function(Success) then) =
       _$SuccessCopyWithImpl<$Res>;
-  $Res call({String connectionState});
+  $Res call({Movie movie});
 }
 
 /// @nodoc
@@ -321,26 +321,24 @@ class _$SuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object connectionState = freezed,
+    Object movie = freezed,
   }) {
     return _then(Success(
-      connectionState == freezed
-          ? _value.connectionState
-          : connectionState as String,
+      movie == freezed ? _value.movie : movie as Movie,
     ));
   }
 }
 
 /// @nodoc
 class _$Success with DiagnosticableTreeMixin implements Success {
-  const _$Success(this.connectionState) : assert(connectionState != null);
+  const _$Success(this.movie) : assert(movie != null);
 
   @override
-  final String connectionState;
+  final Movie movie;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeState.success(connectionState: $connectionState)';
+    return 'HomeState.success(movie: $movie)';
   }
 
   @override
@@ -348,22 +346,20 @@ class _$Success with DiagnosticableTreeMixin implements Success {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HomeState.success'))
-      ..add(DiagnosticsProperty('connectionState', connectionState));
+      ..add(DiagnosticsProperty('movie', movie));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Success &&
-            (identical(other.connectionState, connectionState) ||
-                const DeepCollectionEquality()
-                    .equals(other.connectionState, connectionState)));
+            (identical(other.movie, movie) ||
+                const DeepCollectionEquality().equals(other.movie, movie)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(connectionState);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(movie);
 
   @JsonKey(ignore: true)
   @override
@@ -375,14 +371,14 @@ class _$Success with DiagnosticableTreeMixin implements Success {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(String connectionState),
+    @required TResult success(Movie movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
     assert(error != null);
-    return success(connectionState);
+    return success(movie);
   }
 
   @override
@@ -390,13 +386,13 @@ class _$Success with DiagnosticableTreeMixin implements Success {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(String connectionState),
+    TResult success(Movie movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (success != null) {
-      return success(connectionState);
+      return success(movie);
     }
     return orElse();
   }
@@ -434,9 +430,9 @@ class _$Success with DiagnosticableTreeMixin implements Success {
 }
 
 abstract class Success implements HomeState {
-  const factory Success(String connectionState) = _$Success;
+  const factory Success(Movie movie) = _$Success;
 
-  String get connectionState;
+  Movie get movie;
   @JsonKey(ignore: true)
   $SuccessCopyWith<Success> get copyWith;
 }
@@ -509,7 +505,7 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(String connectionState),
+    @required TResult success(Movie movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -524,7 +520,7 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(String connectionState),
+    TResult success(Movie movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
