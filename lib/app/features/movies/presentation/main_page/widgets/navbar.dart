@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:prospera_exercise/app/features/movies/presentation/main_page/controller/index.dart';
+
+import '../controller/index.dart';
 
 class NavBar extends StatelessWidget {
   final PageController pageController;
@@ -21,10 +23,16 @@ class NavBar extends StatelessWidget {
               pageController.jumpToPage(index);
             }
           },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.movie), label: 'Movie'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Saved'),
+          items: [
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.movie), label: 'Movie'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: 'Search'),
+            BottomNavigationBarItem(
+                icon: state.index == 2
+                    ? const Icon(Icons.star)
+                    : const Icon(Icons.star_border),
+                label: 'Saved'),
           ],
         );
       },
