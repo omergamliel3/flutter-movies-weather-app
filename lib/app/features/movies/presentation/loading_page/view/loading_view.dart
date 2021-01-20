@@ -27,7 +27,7 @@ class LoadingView extends StatelessWidget {
             BlocBuilder<LoadingViewController, LoadingState>(
               builder: (context, state) {
                 return state.when(
-                  loading: () => LoadingWidget(),
+                  loading: () => const LoadingWidget(),
                   error: (failure) => Text(
                     failure.message,
                     textAlign: TextAlign.center,
