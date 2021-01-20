@@ -10,3 +10,5 @@
 //   const factory LoadingState.loading() = Loading;
 //   const factory LoadingState.error(Failure failure) = Error;
 // }
+
+class SearchState {}
