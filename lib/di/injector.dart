@@ -61,7 +61,7 @@ abstract class Injector {
     container.registerInstance(RestClient(Dio()));
   }
 
-  // Register Feature module Factories
+  // Register Movies module Factories
   @Register.factory(MovieRemoteDatasource)
   @Register.factory(MovieRepository, from: MovieRepositoryImpl)
   @Register.factory(GetRemoteMovie)
