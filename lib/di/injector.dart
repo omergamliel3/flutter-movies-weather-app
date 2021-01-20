@@ -16,7 +16,10 @@ import 'package:prospera_exercise/app/features/movies/domain/usecases/get_remote
 
 import '../app/features/movies/presentation/home_page/controller/cubit_controller.dart';
 import '../app/features/movies/presentation/loading_page/controller/cubit_controller.dart';
-import 'package:prospera_exercise/app/features/movies/presentation/main_page/controller/cubit_controller.dart';
+import '../app/features/movies/presentation/main_page/controller/cubit_controller.dart';
+import '../app/features/movies/presentation/saved_page/controller/cubit_controller.dart';
+import '../app/features/movies/presentation/search_page/controller/cubit_controller.dart';
+
 part 'injector.g.dart';
 
 abstract class Injector {
@@ -63,7 +66,9 @@ abstract class Injector {
   @Register.factory(MovieRepository, from: MovieRepositoryImpl)
   @Register.factory(GetRemoteMovie)
   @Register.factory(LoadingViewController)
-  @Register.factory(HomeViewController)
   @Register.factory(MainViewController)
+  @Register.factory(HomeViewController)
+  @Register.factory(SearchViewController)
+  @Register.factory(SavedViewController)
   void _configureFeatureModuleFactories();
 }

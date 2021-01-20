@@ -28,5 +28,7 @@ class _$Injector extends Injector {
     container.registerFactory(
         (c) => HomeViewController(c<NetworkInfoI>(), c<GetRemoteMovie>()));
     container.registerFactory((c) => MainViewController());
+    container.registerFactory((c) => SearchViewController());
+    container.registerFactory((c) => SavedViewController());
   }
 }
