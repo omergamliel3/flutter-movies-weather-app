@@ -15,6 +15,6 @@ class LoadingViewController extends Cubit<LoadingState> {
     await Future.delayed(const Duration(seconds: 3));
     // navigate to home page
     Routes.sailor
-        .navigate(Pages.HOME, navigationType: NavigationType.pushReplace);
+        .navigate(Pages.MAIN, navigationType: NavigationType.pushReplace);
   }
 }

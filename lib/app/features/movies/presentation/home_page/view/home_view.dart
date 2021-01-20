@@ -6,7 +6,6 @@ import '../../../../../core/widgets/image_handler_widget.dart';
 import '../../../domain/entities/movie.dart';
 
 import 'package:prospera_exercise/di/injector.dart';
-import 'package:prospera_exercise/localization/app_localizations.dart';
 
 import '../../../../../core/widgets/index.dart';
 import '../controller/cubit_controller.dart';
@@ -15,12 +14,6 @@ import '../controller/index.dart';
 import '../widgets/widgets.dart';
 
 class HomeView extends StatelessWidget {
-  PreferredSizeWidget appBar(BuildContext context) {
-    return AppBar(
-      title: Text(AppLocalizations.of(context).translate(APP_TITLE)),
-    );
-  }
-
   Widget buildBody(BuildContext context) {
     return BlocBuilder<HomeViewController, HomeState>(
       builder: (context, state) {
@@ -37,7 +30,7 @@ class HomeView extends StatelessWidget {
   Widget buildInitial(BuildContext context) {
     return const Center(
         child: Text(
-      'Tap the button to fetch movie',
+      'Home Page',
       style: TextStyle(fontSize: 30),
     ));
   }
@@ -92,16 +85,12 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      child: BlocProvider(
-        create: (_) => Injector.resolve<HomeViewController>(),
-        child: Builder(
-          builder: (context) => Scaffold(
-            appBar: appBar(context),
-            body: buildBody(context),
-            floatingActionButton: FAB(),
-          ),
+    return BlocProvider(
+      create: (_) => Injector.resolve<HomeViewController>(),
+      child: Builder(
+        builder: (context) => Scaffold(
+          body: buildBody(context),
+          floatingActionButton: FAB(),
         ),
       ),
     );

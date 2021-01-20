@@ -15,9 +15,9 @@ class Routes {
       },
     ));
     sailor.addRoute(SailorRoute(
-      name: Pages.HOME,
+      name: Pages.MAIN,
       builder: (context, args, params) {
-        return HomeView();
+        return MainView();
       },
     ));
   }
