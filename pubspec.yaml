@@ -16,8 +16,6 @@ dependencies:
 
   # api integration (based on dio)
   retrofit: any
-  # for logging purpose
-  logger: any
   # network info
   connectivity: ^0.4.9+3
   # functional programming
