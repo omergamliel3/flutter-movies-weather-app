@@ -1,10 +1,6 @@
-# Flutter Clean Architecture Boilerplate
+# Prospera Exercise
 
-A Flutter clean architecture boilerplate made with Bloc, Kiwi, Sailor, Sembast
-
-## Screenshots
-
----
+A Prospera coding interview exercise
 
 ## Technologies
 
@@ -13,16 +9,20 @@ A Flutter clean architecture boilerplate made with Bloc, Kiwi, Sailor, Sembast
 - **Test-driven-design**
 - **MVC**
 
+### Design Pattern
+
+- **Repository Pattern**
+- **Strategy Pattern**
+
 ### Front-end
 
 - **Flutter SDK**
-- **Kiwi (dependency injection)**
+- **Kiwi (di)**
 - **Sailor (navigation manager)**
 - **Bloc (state managment)**
 
 ### Back-end
 
-- **Sembast**
 - **Retrofit (API integration)**
 
 # Author 🙋
