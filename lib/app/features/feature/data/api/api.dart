@@ -1,7 +1,7 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
-import '../models/movie.dart';
+import '../models/movie_model.dart';
 
 part 'api.g.dart';
 

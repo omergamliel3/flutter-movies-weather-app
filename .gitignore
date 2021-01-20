@@ -41,7 +41,7 @@ app.*.symbols
 app.*.map.json
 
 pubspec.lock
-flutter_boilerplate_project.iml
+prospera_exercise.iml
 .packages
 .metadata
 private

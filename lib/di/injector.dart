@@ -1,4 +1,4 @@
-import 'package:flutter_boilerplate_project/app/core/services/prefs.dart';
+import 'package:prospera_exercise/app/core/services/prefs.dart';
 import 'package:kiwi/kiwi.dart';
 
 import 'package:connectivity/connectivity.dart';

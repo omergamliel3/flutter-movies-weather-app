@@ -1,4 +1,4 @@
-package com.example.flutter_boilerplate_project
+package com.example.prospera_exercise
 
 import io.flutter.embedding.android.FlutterActivity
 

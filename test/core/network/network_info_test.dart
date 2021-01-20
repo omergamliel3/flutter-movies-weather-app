@@ -2,7 +2,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_boilerplate_project/app/core/network/network_info.dart';
+import 'package:prospera_exercise/app/core/network/network_info.dart';
 
 class ConnectivityMock extends Mock implements Connectivity {}
 

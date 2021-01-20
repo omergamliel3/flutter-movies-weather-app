@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_boilerplate_project/di/injector.dart';
-import 'package:flutter_boilerplate_project/localization/app_localizations.dart';
+import 'package:prospera_exercise/di/injector.dart';
+import 'package:prospera_exercise/localization/app_localizations.dart';
 
 import '../controller/index.dart';
 

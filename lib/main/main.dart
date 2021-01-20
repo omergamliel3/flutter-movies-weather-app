@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_boilerplate_project/localization/app_localizations.dart';
+import 'package:prospera_exercise/localization/app_localizations.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 

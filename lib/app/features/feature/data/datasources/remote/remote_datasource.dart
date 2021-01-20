@@ -1,4 +1,4 @@
-import 'package:flutter_boilerplate_project/app/features/feature/data/api/api.dart';
+import 'package:prospera_exercise/app/features/feature/data/api/api.dart';
 import 'package:meta/meta.dart';
 
 const ERROR_MSG = 'Something went wrong';

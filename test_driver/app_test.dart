@@ -17,7 +17,7 @@ Future<void> grantPermissions() async {
     'shell',
     'pm',
     'grant',
-    'com.example.flutter_boilerplate_project',
+    'com.example.prospera_exercise',
     'android.permission.INTERNET'
   ]);
 }

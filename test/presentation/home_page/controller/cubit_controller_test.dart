@@ -3,9 +3,9 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_boilerplate_project/app/core/network/network_info.dart';
-import 'package:flutter_boilerplate_project/app/features/feature/presentation/home_page/controller/cubit_controller.dart';
-import 'package:flutter_boilerplate_project/app/features/feature/presentation/home_page/controller/state.dart';
+import 'package:prospera_exercise/app/core/network/network_info.dart';
+import 'package:prospera_exercise/app/features/feature/presentation/home_page/controller/cubit_controller.dart';
+import 'package:prospera_exercise/app/features/feature/presentation/home_page/controller/state.dart';
 
 class MockNetworkInfo extends Mock implements NetworkInfoI {}
 
