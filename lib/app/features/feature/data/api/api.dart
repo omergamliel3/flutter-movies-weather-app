@@ -1,19 +1,17 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
+import '../models/movie.dart';
+
 part 'api.g.dart';
 
-@RestApi()
+// EXAPMLE env['VAR_NAME'];
+
+@RestApi(baseUrl: "http://www.omdbapi.com/")
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
+
+  @GET("/?t={title}&apikey={apikey}")
+  Future<MovieModel> getMovie(
+      @Path('title') String title, @Path('apikey') String apikey);
 }
-
-// EXAPMLE
-
-// @RestApi(baseUrl: "https://newsapi.org/v2/")
-// abstract class RestClient {
-//   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
-
-//   @GET("/top-headlines?language=en&pageSize=100&apiKey=$newsApiKey")
-//   Future<List<ArticleModel>> getTopHeadlines();
-// }
