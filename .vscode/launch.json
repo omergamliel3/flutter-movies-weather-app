@@ -1,0 +1,40 @@
+// vs code launch configurations 
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter-dev",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/main/main_dev.dart"
+            ],
+            "program": "lib/main/main_dev.dart"
+        },
+        {
+            "name": "flutter-prod",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/main/main_prod.dart"
+            ]
+        },
+        {
+            "name": "flutter-test",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/main/main_test.dart"
+            ]
+        },
+        {
+            "name": "Run all Tests",
+            "request": "launch",
+            "type": "dart",
+            "program": "./test"
+        }
+    ]
+}
