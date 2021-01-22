@@ -24,6 +24,8 @@ A Prospera coding interview exercise
 ### Back-end
 
 - **Retrofit (API integration)**
+- **[Weather API](https://openweathermap.org/api)**
+- **[OMDb API](http://www.omdbapi.com/)**
 
 # Author 🙋
 
