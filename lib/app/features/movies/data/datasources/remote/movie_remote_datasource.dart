@@ -20,7 +20,7 @@ class MovieRemoteDatasource {
   // return decoded data as Map if status code is 200
   Future<Either<Failure, MovieModel>> getMovie() async {
     try {
-      final movie = await client.getMovie('avatar', env['API_KEY']);
+      final movie = await client.getMovie('avatar', env['MOVIE_API_KEY']);
       if (movie == null) {
         throw Exception(ERROR_MSG);
       }
