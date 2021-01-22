@@ -47,7 +47,6 @@ class _$Injector extends Injector {
     container.registerFactory<WeatherRepository>((c) => WeatherRepositoryImpl(
         remoteDatasource: c<WeatherRemoteDatasource>(),
         cacheDatasource: c<WeatherCacheDatasource>()));
-    container.registerFactory((c) => GetCacheWeather(c<WeatherRepository>()));
     container
         .registerFactory((c) => GetRemoteWeatherByCity(c<WeatherRepository>()));
     container.registerFactory(

@@ -11,7 +11,7 @@ import 'package:prospera_exercise/app/features/weather/data/datasources/remote/w
 import 'package:prospera_exercise/app/features/weather/data/repositories/weather_repository_impl.dart';
 
 import 'package:prospera_exercise/app/features/weather/domain/repositories/weather_repository.dart';
-import 'package:prospera_exercise/app/features/weather/domain/usecases/get_cache_weather.dart';
+//import 'package:prospera_exercise/app/features/weather/domain/usecases/get_cache_weather.dart';
 import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_city.dart';
 import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_coords.dart';
 import 'package:prospera_exercise/app/features/movie/domain/repositories/movie_repository.dart';
@@ -104,7 +104,7 @@ abstract class Injector {
   @Register.factory(WeatherRemoteDatasource)
   @Register.factory(WeatherCacheDatasource)
   @Register.factory(WeatherRepository, from: WeatherRepositoryImpl)
-  @Register.factory(GetCacheWeather)
+  //@Register.factory(GetCacheWeather)
   @Register.factory(GetRemoteWeatherByCity)
   @Register.factory(GetRemoteWeatherByCoords)
   void _configureWeatherModuleFactories();
