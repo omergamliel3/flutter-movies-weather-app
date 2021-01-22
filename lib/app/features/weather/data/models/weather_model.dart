@@ -33,6 +33,8 @@ class WeatherModel extends Weather {
           windDeg: windDeg,
         );
 
+  // todo: fix cast type error
+
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     final coord = json['coord'] as Map<String, dynamic>;
     final weatherData = json['weather'][0] as Map<String, dynamic>;
