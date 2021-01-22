@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prospera_exercise/app/core/usecases/usecase.dart';
 
 import '../../../domain/usecases/get_remote_movie.dart';
 
@@ -30,7 +31,7 @@ class HomeViewController extends Cubit<HomeState> {
       waitForConnectivityAndCallGetMovie();
       emit(const Error(Failure(ERROR_MSG)));
     } else {
-      final failureOrMovie = await getRemoteMovie.call();
+      final failureOrMovie = await getRemoteMovie.call(NoParams());
       emit(failureOrMovie.fold(
         (failure) => Error(failure),
         (movie) => Success(movie),
