@@ -13,7 +13,7 @@ import '../../index.dart';
 
 class MainView extends StatelessWidget {
   final _pageController = PageController();
-  final _pages = <Widget>[HomeView(), SearchView(), SavedView()];
+  final _pages = <Widget>[HomeView(), SearchView(), SavedView(), WeahterView()];
 
   PreferredSizeWidget appBar(BuildContext context) {
     return AppBar(

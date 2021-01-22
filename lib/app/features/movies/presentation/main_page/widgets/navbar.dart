@@ -33,6 +33,11 @@ class NavBar extends StatelessWidget {
                     ? const Icon(Icons.star)
                     : const Icon(Icons.star_border),
                 label: 'Saved'),
+            BottomNavigationBarItem(
+                icon: state.index == 3
+                    ? const Icon(Icons.cloud)
+                    : const Icon(Icons.cloud_queue),
+                label: 'Weather'),
           ],
         );
       },
