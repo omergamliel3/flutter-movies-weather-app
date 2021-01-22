@@ -5,8 +5,6 @@ import '../models/movie_model.dart';
 
 part 'movie_api.g.dart';
 
-// EXAPMLE env['VAR_NAME'];
-
 @RestApi(baseUrl: "http://www.omdbapi.com/")
 abstract class MovieRestClient {
   factory MovieRestClient(Dio dio, {String baseUrl}) = _MovieRestClient;
