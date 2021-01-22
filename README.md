@@ -28,10 +28,10 @@ A Prospera coding interview exercise
 - **Kiwi (di)**
 - **Sailor (navigation manager)**
 - **Bloc (state managment)**
+- **Retrofit (API integration)**
 
 ### Back-end
 
-- **Retrofit (API integration)**
 - **[Weather API](https://openweathermap.org/api)**
 - **[OMDb API](http://www.omdbapi.com/)**
 
