@@ -2,6 +2,9 @@ import 'package:meta/meta.dart';
 
 import '../../domain/entities/weather.dart';
 
+const LAT_KEY = 'lat';
+const LON_KEY = 'lon';
+const NAME_KEY = 'name';
 const MAIN_KEY = 'main';
 const DESCRIPTION_KEY = 'description';
 const TEMP_KEY = 'temp';
@@ -16,6 +19,9 @@ const UNKNOWN = 'unknown';
 
 class WeatherModel extends Weather {
   const WeatherModel({
+    @required double lat,
+    @required double lon,
+    @required String name,
     @required String main,
     @required String description,
     @required double temp,
@@ -26,6 +32,9 @@ class WeatherModel extends Weather {
     @required double windSpeed,
     @required double windDeg,
   }) : super(
+          lat: lat,
+          lon: lon,
+          name: name,
           main: main,
           description: description,
           temp: temp,
@@ -38,11 +47,15 @@ class WeatherModel extends Weather {
         );
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
+    final coord = json['coord'] as Map<String, dynamic>;
     final weatherData = json['weather'][0] as Map<String, dynamic>;
     final mainData = json['main'] as Map<String, dynamic>;
     final windData = json['wind'] as Map<String, dynamic>;
 
     return WeatherModel(
+      lat: coord[LAT_KEY] as double,
+      lon: coord[LON_KEY] as double,
+      name: json[NAME_KEY] as String ?? UNKNOWN,
       main: weatherData[MAIN_KEY] as String ?? UNKNOWN,
       description: weatherData[DESCRIPTION_KEY] as String ?? UNKNOWN,
       temp: mainData[TEMP_KEY] as double,
@@ -57,6 +70,9 @@ class WeatherModel extends Weather {
 
   factory WeatherModel.fromJsonCache(Map<String, dynamic> json) {
     return WeatherModel(
+      lat: json[LAT_KEY] as double,
+      lon: json[LON_KEY] as double,
+      name: json[NAME_KEY] as String ?? UNKNOWN,
       main: json[MAIN_KEY] as String,
       description: json[DESCRIPTION_KEY] as String,
       temp: json[TEMP_KEY] as double,
@@ -71,6 +87,9 @@ class WeatherModel extends Weather {
 
   Map<String, dynamic> toJson() {
     return {
+      LAT_KEY: lat,
+      LON_KEY: lon,
+      NAME_KEY: name,
       MAIN_KEY: main,
       DESCRIPTION_KEY: description,
       TEMP_KEY: temp,
