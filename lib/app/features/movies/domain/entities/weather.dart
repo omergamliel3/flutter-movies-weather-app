@@ -24,5 +24,15 @@ class Weather extends Equatable {
     @required this.windDeg,
   });
   @override
-  List<Object> get props => [];
+  List<Object> get props => [
+        main,
+        description,
+        temp,
+        feelsLike,
+        tempMin,
+        tempMax,
+        humidity,
+        windSpeed,
+        windDeg,
+      ];
 }
