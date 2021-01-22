@@ -9,7 +9,7 @@ A Prospera coding interview exercise
 - **Test-driven-design**
 - **MVC**
 
-### Design Pattern
+### Design Patterns
 
 - **Repository Pattern**
 - **Strategy Pattern**
