@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 
 import '../../domain/entities/weather.dart';
 
-part 'key_constants.dart';
+part 'constants.dart';
 
 class WeatherModel extends Weather {
   const WeatherModel({
