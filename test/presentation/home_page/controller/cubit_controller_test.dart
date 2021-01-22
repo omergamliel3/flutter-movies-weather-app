@@ -4,9 +4,9 @@ import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:prospera_exercise/app/core/network/network_info.dart';
-import 'package:prospera_exercise/app/features/movies/domain/usecases/get_remote_movie.dart';
-import 'package:prospera_exercise/app/features/movies/presentation/home_page/controller/cubit_controller.dart';
-import 'package:prospera_exercise/app/features/movies/presentation/home_page/controller/state.dart';
+import 'package:prospera_exercise/app/features/movie/domain/usecases/get_remote_movie.dart';
+import 'package:prospera_exercise/app/features/presentation/home_page/controller/cubit_controller.dart';
+import 'package:prospera_exercise/app/features/presentation/home_page/controller/state.dart';
 
 class MockNetworkInfo extends Mock implements NetworkInfoI {}
 

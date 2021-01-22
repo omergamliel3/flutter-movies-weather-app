@@ -1,6 +1,6 @@
 import 'package:sailor/sailor.dart';
 
-import '../features/movies/presentation/index.dart';
+import '../features/presentation/index.dart';
 
 part 'app_pages.dart';
 
