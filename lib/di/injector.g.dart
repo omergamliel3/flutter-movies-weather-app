@@ -41,12 +41,15 @@ class _$Injector extends Injector {
   @override
   void _configureWeatherModuleFactories() {
     final KiwiContainer container = KiwiContainer();
-    container.registerFactory(
-        (c) => WeatherRemoteDatasource(client: c<WeatherRestClient>()));
-    container.registerFactory((c) => WeatherCacheDatasource(c<Prefs>()));
+    container.registerFactory((c) => WeatherRemoteDatasource(
+        coordsCacheDatasource: c<WeatherCoordsCacheDatasource>(),
+        cityCacheDatasource: c<WeatherCityCacheDatasource>(),
+        client: c<WeatherRestClient>()));
+    container.registerFactory((c) => WeatherCoordsCacheDatasource(c<Prefs>()));
     container.registerFactory<WeatherRepository>((c) => WeatherRepositoryImpl(
         remoteDatasource: c<WeatherRemoteDatasource>(),
-        cacheDatasource: c<WeatherCacheDatasource>()));
+        coordsCacheDatasource: c<WeatherCoordsCacheDatasource>(),
+        cityCacheDatasource: c<WeatherCityCacheDatasource>()));
     container
         .registerFactory((c) => GetRemoteWeatherByCity(c<WeatherRepository>()));
     container.registerFactory(

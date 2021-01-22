@@ -3,6 +3,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dio/dio.dart';
 
 import 'package:meta/meta.dart';
+import 'package:prospera_exercise/app/features/weather/data/datasources/local/weather_city_cache_datasource.dart';
+import 'package:prospera_exercise/app/features/weather/data/datasources/local/weather_coords_cache_datasource.dart';
 
 import '../../../../../core/errors/failure.dart';
 
@@ -15,7 +17,13 @@ const INVALID_CITY_NAME = 'invalid city name';
 
 class WeatherRemoteDatasource {
   final WeatherRestClient client;
-  WeatherRemoteDatasource({@required this.client});
+  final WeatherCoordsCacheDatasource coordsCacheDatasource;
+  final WeatherCityCacheDatasource cityCacheDatasource;
+  WeatherRemoteDatasource({
+    @required this.coordsCacheDatasource,
+    @required this.cityCacheDatasource,
+    @required this.client,
+  });
 
   // get weather by coords from api endpoint
   // return Failure if catch error or status code is not 200
@@ -33,7 +41,9 @@ class WeatherRemoteDatasource {
       if (lat != weather.lat || lon != weather.lon) {
         return const Left(Failure(INVALID_COORDS));
       }
-
+      // save current coords weather in local cache (prefs)
+      await coordsCacheDatasource.saveCoordsCacheWeather(weather);
+      // return the weather model object
       return Right(weather);
     } on DioError catch (error) {
       print(error.type);
@@ -59,7 +69,9 @@ class WeatherRemoteDatasource {
       if (city != weather.name) {
         return const Left(Failure(INVALID_CITY_NAME));
       }
-
+      // save current city weather in local cache (database)
+      await cityCacheDatasource.insertCityWeather(weather);
+      // return the weather model object
       return Right(weather);
     } on DioError catch (error) {
       print(error.type);

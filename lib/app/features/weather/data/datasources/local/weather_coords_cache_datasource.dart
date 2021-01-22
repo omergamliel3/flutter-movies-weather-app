@@ -10,11 +10,14 @@ const ERROR_MSG = 'Something went wrong';
 const NO_SAVED_CACHE = 'Something went wrong';
 const WEATHER_CACHE_KEY = 'weather_cache';
 
-class WeatherCacheDatasource {
-  final Prefs prefs;
-  WeatherCacheDatasource(this.prefs);
+// Weather coords local data source to
+// store user device location weather data
 
-  Future<Either<Failure, WeatherModel>> getCacheWeather() async {
+class WeatherCoordsCacheDatasource {
+  final Prefs prefs;
+  WeatherCoordsCacheDatasource(this.prefs);
+
+  Future<Either<Failure, WeatherModel>> getCoordsCacheWeather() async {
     try {
       // get raw json cache from prefs
       final jsonCache = prefs.instance.getString(WEATHER_CACHE_KEY);
@@ -32,6 +35,19 @@ class WeatherCacheDatasource {
       return Right(weather);
     } on Exception catch (_) {
       return const Left(Failure(ERROR_MSG));
+    }
+  }
+
+  // save weather model in local cache (prefs)
+  // return [true / false] if saved in cache successfuly
+  Future<bool> saveCoordsCacheWeather(WeatherModel weather) async {
+    try {
+      final result = await prefs.instance
+          .setString(WEATHER_CACHE_KEY, json.encode(weather.toJson()));
+      return result;
+    } on Exception catch (e) {
+      print(e);
+      return false;
     }
   }
 }

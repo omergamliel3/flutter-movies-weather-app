@@ -8,6 +8,8 @@ import 'package:prospera_exercise/app/core/usecases/usecase.dart';
 import '../entities/weather.dart';
 import '../repositories/weather_repository.dart';
 
+// TODO: REMOVE REMOTE
+
 class GetRemoteWeatherByCoords implements UseCase<Weather, Params> {
   final WeatherRepository repository;
   GetRemoteWeatherByCoords(this.repository);
