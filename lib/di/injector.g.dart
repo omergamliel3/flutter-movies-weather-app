@@ -25,7 +25,8 @@ class _$Injector extends Injector {
         (c) => HomeViewController(c<NetworkInfoI>(), c<GetRemoteMovie>()));
     container.registerFactory((c) => SearchViewController());
     container.registerFactory((c) => SavedViewController());
-    container.registerFactory((c) => WeatherViewController());
+    container.registerFactory((c) => WeatherViewController(
+        getRemoteWeatherByCity: c<GetRemoteWeatherByCity>()));
   }
 
   @override
