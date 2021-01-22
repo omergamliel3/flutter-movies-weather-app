@@ -32,7 +32,8 @@ class WeatherRepositoryImpl implements WeatherRepository {
       final response = await coordsCacheDatasource.getCoordsCacheWeather();
       return response.fold(
           (failure) => Left(failure), (weather) => Right(weather));
-    } catch (_) {
+    } catch (e) {
+      print(e);
       return const Left(Failure(ERROR_MSG));
     }
   }
@@ -43,7 +44,8 @@ class WeatherRepositoryImpl implements WeatherRepository {
       final response = await remoteDatasource.getWeatherByCity(city);
       return response.fold(
           (failure) => Left(failure), (weather) => Right(weather));
-    } catch (_) {
+    } catch (e) {
+      print(e);
       return const Left(Failure(ERROR_MSG));
     }
   }
