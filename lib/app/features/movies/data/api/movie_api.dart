@@ -3,13 +3,13 @@ import 'package:dio/dio.dart';
 
 import '../models/movie_model.dart';
 
-part 'api.g.dart';
+part 'movie_api.g.dart';
 
 // EXAPMLE env['VAR_NAME'];
 
 @RestApi(baseUrl: "http://www.omdbapi.com/")
-abstract class RestClient {
-  factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
+abstract class MovieRestClient {
+  factory MovieRestClient(Dio dio, {String baseUrl}) = _MovieRestClient;
 
   @GET("/?t={title}&apikey={apikey}")
   Future<MovieModel> getMovie(

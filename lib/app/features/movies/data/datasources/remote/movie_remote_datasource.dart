@@ -7,12 +7,12 @@ import 'package:meta/meta.dart';
 import '../../../../../core/errors/failure.dart';
 
 import '../../models/movie_model.dart';
-import '../../api/api.dart';
+import '../../api/movie_api.dart';
 
 const ERROR_MSG = 'Something went wrong';
 
 class MovieRemoteDatasource {
-  final RestClient client;
+  final MovieRestClient client;
   MovieRemoteDatasource({@required this.client});
 
   // get movie from api endpoint

@@ -19,15 +19,15 @@ class _$Injector extends Injector {
   @override
   void _configureFeatureModuleFactories() {
     final KiwiContainer container = KiwiContainer();
-    container
-        .registerFactory((c) => MovieRemoteDatasource(client: c<RestClient>()));
+    container.registerFactory(
+        (c) => MovieRemoteDatasource(client: c<MovieRestClient>()));
     container.registerFactory<MovieRepository>((c) =>
         MovieRepositoryImpl(remoteDatasource: c<MovieRemoteDatasource>()));
     container.registerFactory((c) => GetRemoteMovie(c<MovieRepository>()));
     container.registerFactory((c) => LoadingViewController());
+    container.registerFactory((c) => MainViewController());
     container.registerFactory(
         (c) => HomeViewController(c<NetworkInfoI>(), c<GetRemoteMovie>()));
-    container.registerFactory((c) => MainViewController());
     container.registerFactory((c) => SearchViewController());
     container.registerFactory((c) => SavedViewController());
   }

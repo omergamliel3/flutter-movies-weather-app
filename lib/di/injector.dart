@@ -5,7 +5,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 
 import '../app/core/network/network_info.dart';
-import '../app/features/movies/data/api/api.dart';
+import '../app/features/movies/data/api/movie_api.dart';
 
 import '../app/theme/theme_provider.dart';
 
@@ -58,7 +58,7 @@ abstract class Injector {
 
   // Register Feature module Instances
   void _configureFeatureModuleInstances() {
-    container.registerInstance(RestClient(Dio()));
+    container.registerInstance(MovieRestClient(Dio()));
   }
 
   // Register Movies module Factories
