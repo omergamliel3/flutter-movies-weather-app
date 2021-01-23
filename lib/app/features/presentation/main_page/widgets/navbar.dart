@@ -25,7 +25,7 @@ class NavBar extends StatelessWidget {
           },
           items: [
             const BottomNavigationBarItem(
-                icon: Icon(Icons.movie), label: 'Movie'),
+                icon: Icon(Icons.movie), label: 'Movies'),
             const BottomNavigationBarItem(
                 icon: Icon(Icons.search), label: 'Search'),
             BottomNavigationBarItem(
