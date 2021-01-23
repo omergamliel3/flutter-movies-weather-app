@@ -7,7 +7,7 @@ import 'package:prospera_exercise/app/core/services/prefs.dart';
 import 'package:prospera_exercise/app/features/weather/data/models/weather_model.dart';
 
 const ERROR_MSG = 'Something went wrong';
-const NO_SAVED_CACHE = 'Something went wrong';
+const NO_INTERNET_MSG = 'There is no internet connection';
 const WEATHER_CACHE_KEY = 'weather_cache';
 
 // Weather coords local data source to
@@ -23,7 +23,7 @@ class WeatherCoordsCacheDatasource {
       final jsonCache = prefs.instance.getString(WEATHER_CACHE_KEY);
       // throw failure if jsonCache is null
       if (jsonCache == null) {
-        return const Left(Failure(NO_SAVED_CACHE));
+        return const Left(Failure(NO_INTERNET_MSG));
       }
       final weather = WeatherModel.fromJsonCache(
           json.decode(jsonCache) as Map<String, dynamic>);
