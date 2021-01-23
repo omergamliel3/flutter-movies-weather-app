@@ -8,12 +8,12 @@ class Weather extends Equatable {
   final String main;
   final String description;
   final double temp;
-  final double feelsLike;
+  final int feelsLike;
   final double tempMin;
   final double tempMax;
-  final double humidity;
+  final int humidity;
   final double windSpeed;
-  final double windDeg;
+  final int windDeg;
 
   const Weather({
     @required this.lat,

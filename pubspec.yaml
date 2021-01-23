@@ -50,6 +50,8 @@ dependencies:
   flutter_dotenv: ^3.1.0
   # location service
   location: ^3.2.4
+  # cool loaders
+  flutter_spinkit: ^4.1.2
   
 dev_dependencies:
   # tests
