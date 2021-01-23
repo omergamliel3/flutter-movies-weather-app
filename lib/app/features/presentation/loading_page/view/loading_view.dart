@@ -17,9 +17,22 @@ class LoadingView extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.movie,
-              size: 50,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(
+                  Icons.movie,
+                  size: 50,
+                ),
+                SizedBox(width: 15.0),
+                Text(
+                  'Prospera',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
+                )
+              ],
             ),
             const SizedBox(height: 40.0),
             BlocBuilder<LoadingViewController, LoadingState>(
