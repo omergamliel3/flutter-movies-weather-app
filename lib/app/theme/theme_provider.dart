@@ -12,7 +12,7 @@ const SYSTEM_THEME = null;
 class ThemeProvider extends Cubit<ThemeState> {
   ThemeProvider(this._prefs)
       : super(_prefs.instance.getString(THEME_KEY) == SYSTEM_THEME
-            ? const System()
+            ? const Dark()
             : _prefs.instance.getString(THEME_KEY) == LIGHT_THEME
                 ? const Light()
                 : const Dark());
