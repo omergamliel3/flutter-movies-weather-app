@@ -16,17 +16,17 @@ const ERROR_MSG = 'Device location is unknown';
 class WeatherViewController extends Cubit<WeatherState> {
   WeatherViewController({
     @required this.getRemoteWeatherByCoords,
-    @required this.networkInfo,
+    @required this.locationService,
   }) : super(const Initial());
 
   final GetRemoteWeatherByCoords getRemoteWeatherByCoords;
-  final NetworkInfoI networkInfo;
+  final LocationService locationService;
 
   Future<void> getWeather() async {
     // emit loading state
     emit(const Loading());
     // get device location
-    final location = await LocationService.getDeviceLocation();
+    final location = await locationService.getDeviceLocation();
     // emit error state if location is null
     if (location == null) {
       emit(const Error(Failure(ERROR_MSG)));
@@ -42,15 +42,5 @@ class WeatherViewController extends Cubit<WeatherState> {
         (weather) => Success(weather),
       ));
     }
-  }
-
-  void waitForConnectivityAndCallGetMovies() {
-    StreamSubscription subscription;
-    subscription = networkInfo.onConnectivityChanged.listen((event) {
-      if (event != ConnectivityResult.none) {
-        subscription.cancel();
-        getWeather();
-      }
-    });
   }
 }

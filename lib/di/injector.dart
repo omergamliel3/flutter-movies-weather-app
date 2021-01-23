@@ -2,6 +2,7 @@ import 'package:kiwi/kiwi.dart';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
+import 'package:prospera_exercise/app/core/services/location.dart';
 
 import 'package:prospera_exercise/app/features/weather/data/api/weather_api.dart';
 import 'package:prospera_exercise/app/features/weather/data/datasources/local/weather_city_cache_datasource.dart';
@@ -67,6 +68,7 @@ abstract class Injector {
   @Register.singleton(Connectivity)
   @Register.singleton(NetworkInfoI, from: NetworkInfo)
   @Register.singleton(ThemeProvider)
+  @Register.singleton(LocationService)
   void _configureCore();
 
   // Controllers module

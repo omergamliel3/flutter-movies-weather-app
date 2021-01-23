@@ -14,6 +14,7 @@ class _$Injector extends Injector {
     container.registerSingleton<NetworkInfoI>(
         (c) => NetworkInfo(connectivity: c<Connectivity>()));
     container.registerSingleton((c) => ThemeProvider(c<Prefs>()));
+    container.registerSingleton((c) => LocationService());
   }
 
   @override
@@ -27,7 +28,7 @@ class _$Injector extends Injector {
     container.registerFactory((c) => SavedViewController());
     container.registerFactory((c) => WeatherViewController(
         getRemoteWeatherByCoords: c<GetRemoteWeatherByCoords>(),
-        networkInfo: c<NetworkInfoI>()));
+        locationService: c<LocationService>()));
   }
 
   @override
