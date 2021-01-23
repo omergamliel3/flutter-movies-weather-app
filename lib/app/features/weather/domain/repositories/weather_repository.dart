@@ -8,5 +8,4 @@ abstract class WeatherRepository {
   Future<Either<Failure, Weather>> getRemoteWeatherByCoords(
       double lat, double lon);
   Future<Either<Failure, Weather>> getRemoteWeatherByCity(String city);
-  Future<Either<Failure, Weather>> getCacheWeather();
 }
