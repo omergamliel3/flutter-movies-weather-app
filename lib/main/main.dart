@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
               navigatorKey: Routes.sailor.navigatorKey,
               initialRoute: Pages.SPLASH,
               onGenerateRoute: Routes.sailor.generator(),
+              // ignore: avoid_redundant_argument_values
               supportedLocales: const [
                 Locale('en', 'US'), // American English
-                Locale('he', 'IL'), // Israeli Hebrew
               ],
               localizationsDelegates: const [
                 AppLocalizations.delegate,
