@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget();
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).accentColor;
-    return Center(
-      child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(color),
-      ),
+    return SpinKitFadingCircle(
+      itemBuilder: (context, index) {
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Theme.of(context).accentColor,
+          ),
+        );
+      },
     );
   }
 }
