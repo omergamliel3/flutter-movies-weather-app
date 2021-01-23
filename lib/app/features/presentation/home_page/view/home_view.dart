@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Injector.resolve<HomeViewController>()..getMovie(),
+      create: (_) => Injector.resolve<HomeViewController>()..getMovies(),
       child: Builder(
         builder: (context) => Scaffold(
           body: buildBody(context),

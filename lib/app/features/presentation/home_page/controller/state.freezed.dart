@@ -24,7 +24,7 @@ class _$HomeStateTearOff {
   }
 
 // ignore: unused_element
-  Success success(Movie movie) {
+  Success success(List<Movie> movie) {
     return Success(
       movie,
     );
@@ -48,14 +48,14 @@ mixin _$HomeState {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(Movie movie),
+    @required TResult success(List<Movie> movie),
     @required TResult error(Failure failure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(Movie movie),
+    TResult success(List<Movie> movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   });
@@ -135,7 +135,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(Movie movie),
+    @required TResult success(List<Movie> movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -150,7 +150,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(Movie movie),
+    TResult success(List<Movie> movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
@@ -241,7 +241,7 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(Movie movie),
+    @required TResult success(List<Movie> movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -256,7 +256,7 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(Movie movie),
+    TResult success(List<Movie> movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
@@ -307,7 +307,7 @@ abstract class Loading implements HomeState {
 abstract class $SuccessCopyWith<$Res> {
   factory $SuccessCopyWith(Success value, $Res Function(Success) then) =
       _$SuccessCopyWithImpl<$Res>;
-  $Res call({Movie movie});
+  $Res call({List<Movie> movie});
 }
 
 /// @nodoc
@@ -324,7 +324,7 @@ class _$SuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     Object movie = freezed,
   }) {
     return _then(Success(
-      movie == freezed ? _value.movie : movie as Movie,
+      movie == freezed ? _value.movie : movie as List<Movie>,
     ));
   }
 }
@@ -334,7 +334,7 @@ class _$Success with DiagnosticableTreeMixin implements Success {
   const _$Success(this.movie) : assert(movie != null);
 
   @override
-  final Movie movie;
+  final List<Movie> movie;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -371,7 +371,7 @@ class _$Success with DiagnosticableTreeMixin implements Success {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(Movie movie),
+    @required TResult success(List<Movie> movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -386,7 +386,7 @@ class _$Success with DiagnosticableTreeMixin implements Success {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(Movie movie),
+    TResult success(List<Movie> movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {
@@ -430,9 +430,9 @@ class _$Success with DiagnosticableTreeMixin implements Success {
 }
 
 abstract class Success implements HomeState {
-  const factory Success(Movie movie) = _$Success;
+  const factory Success(List<Movie> movie) = _$Success;
 
-  Movie get movie;
+  List<Movie> get movie;
   @JsonKey(ignore: true)
   $SuccessCopyWith<Success> get copyWith;
 }
@@ -505,7 +505,7 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loading(),
-    @required TResult success(Movie movie),
+    @required TResult success(List<Movie> movie),
     @required TResult error(Failure failure),
   }) {
     assert(initial != null);
@@ -520,7 +520,7 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loading(),
-    TResult success(Movie movie),
+    TResult success(List<Movie> movie),
     TResult error(Failure failure),
     @required TResult orElse(),
   }) {

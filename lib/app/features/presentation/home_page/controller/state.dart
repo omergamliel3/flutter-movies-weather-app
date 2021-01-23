@@ -9,6 +9,6 @@ part 'state.freezed.dart';
 abstract class HomeState with _$HomeState {
   const factory HomeState.initial() = Initial;
   const factory HomeState.loading() = Loading;
-  const factory HomeState.success(Movie movie) = Success;
+  const factory HomeState.success(List<Movie> movie) = Success;
   const factory HomeState.error(Failure failure) = Error;
 }

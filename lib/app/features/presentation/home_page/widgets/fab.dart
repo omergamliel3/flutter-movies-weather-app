@@ -8,7 +8,7 @@ class FAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () => BlocProvider.of<HomeViewController>(context).getMovie(),
+      onPressed: () => BlocProvider.of<HomeViewController>(context).getMovies(),
       child: const Icon(Icons.refresh_sharp),
     );
   }

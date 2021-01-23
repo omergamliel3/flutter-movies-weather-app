@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:prospera_exercise/app/core/errors/failure.dart';
 
-import 'widgets.dart';
-
 class ErrorView extends StatelessWidget {
   final Failure failure;
   const ErrorView(this.failure);
@@ -13,11 +11,17 @@ class ErrorView extends StatelessWidget {
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(failure.message),
-        const SizedBox(
-          height: 30,
+        Text(
+          failure.message,
+          style: const TextStyle(fontSize: 30),
         ),
-        const InitialView(),
+        const SizedBox(
+          height: 20,
+        ),
+        const Icon(
+          Icons.wifi_off,
+          size: 40,
+        ),
       ],
     ));
   }
