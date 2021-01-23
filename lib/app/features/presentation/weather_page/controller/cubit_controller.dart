@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
+
 import 'package:prospera_exercise/app/core/errors/failure.dart';
-import 'package:prospera_exercise/app/core/network/network_info.dart';
 import 'package:prospera_exercise/app/core/services/location.dart';
 
 import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_coords.dart';
