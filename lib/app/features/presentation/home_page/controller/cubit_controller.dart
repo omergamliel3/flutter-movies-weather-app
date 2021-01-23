@@ -7,7 +7,6 @@ import 'package:prospera_exercise/app/features/movie/domain/usecases/get_remote_
 
 import 'package:prospera_exercise/app/core/errors/failure.dart';
 import 'package:prospera_exercise/app/core/network/network_info.dart';
-import 'package:prospera_exercise/app/core/usecases/usecase.dart';
 
 import 'index.dart';
 import 'state.dart';
@@ -31,7 +30,8 @@ class HomeViewController extends Cubit<HomeState> {
       waitForConnectivityAndCallGetMovie();
       emit(const Error(Failure(ERROR_MSG)));
     } else {
-      final failureOrMovie = await getRemoteMovie.call(NoParams());
+      final failureOrMovie =
+          await getRemoteMovie.call(const Params(movie: 'avatar'));
       emit(failureOrMovie.fold(
         (failure) => Error(failure),
         (movie) => Success(movie),

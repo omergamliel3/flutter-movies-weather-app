@@ -6,8 +6,6 @@ import 'package:prospera_exercise/app/core/widgets/index.dart';
 
 import 'package:prospera_exercise/di/injector.dart';
 
-import 'package:prospera_exercise/localization/app_localizations.dart';
-
 import '../controller/index.dart';
 
 class LoadingView extends StatelessWidget {
@@ -19,9 +17,9 @@ class LoadingView extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              AppLocalizations.of(context).translate(LOADING),
-              style: Theme.of(context).textTheme.headline4,
+            const Icon(
+              Icons.movie,
+              size: 50,
             ),
             const SizedBox(height: 40.0),
             BlocBuilder<LoadingViewController, LoadingState>(

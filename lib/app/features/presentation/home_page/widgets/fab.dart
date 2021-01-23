@@ -9,8 +9,7 @@ class FAB extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () => BlocProvider.of<HomeViewController>(context).getMovie(),
-      tooltip: 'Fetch',
-      child: const Icon(Icons.movie),
+      child: const Icon(Icons.refresh_sharp),
     );
   }
 }

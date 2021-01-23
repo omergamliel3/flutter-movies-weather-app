@@ -15,9 +15,9 @@ class MovieRepositoryImpl implements MovieRepository {
   final MovieRemoteDatasource remoteDatasource;
 
   @override
-  Future<Either<Failure, Movie>> getRemoteMovie() async {
+  Future<Either<Failure, Movie>> getRemoteMovie(String movie) async {
     try {
-      final response = await remoteDatasource.getMovie();
+      final response = await remoteDatasource.getMovie(movie);
       return response.fold((failure) => Left(failure), (movie) => Right(movie));
     } catch (_) {
       return const Left(Failure(ERROR_MSG));

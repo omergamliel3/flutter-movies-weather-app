@@ -18,13 +18,13 @@ class MovieRemoteDatasource {
   // get movie from api endpoint
   // return Failure if catch error or status code is not 200
   // return decoded data as Map if status code is 200
-  Future<Either<Failure, MovieModel>> getMovie() async {
+  Future<Either<Failure, MovieModel>> getMovie(String movie) async {
     try {
-      final movie = await client.getMovie('avatar', env['MOVIE_API_KEY']);
-      if (movie == null) {
+      final result = await client.getMovie(movie, env['MOVIE_API_KEY']);
+      if (result == null) {
         throw Exception(ERROR_MSG);
       }
-      return Right(movie);
+      return Right(result);
     } on DioError catch (error) {
       print(error.type);
       print(error.message);

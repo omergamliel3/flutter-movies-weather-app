@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
       child: Builder(
         builder: (context) => Scaffold(
           body: buildBody(context),
-          floatingActionButton: FAB(),
+          //floatingActionButton: FAB(),
         ),
       ),
     );

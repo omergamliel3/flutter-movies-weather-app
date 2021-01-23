@@ -17,7 +17,15 @@ class MainView extends StatelessWidget {
 
   PreferredSizeWidget appBar(BuildContext context) {
     return AppBar(
-      title: Text(AppLocalizations.of(context).translate(APP_TITLE)),
+      title: Row(
+        children: [
+          const Icon(Icons.movie),
+          const SizedBox(
+            width: 10.0,
+          ),
+          Text(AppLocalizations.of(context).translate(APP_TITLE))
+        ],
+      ),
     );
   }
 
