@@ -37,6 +37,13 @@ class MovieView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
+              Container(
+                  alignment: Alignment.topRight,
+                  padding: const EdgeInsets.only(right: 10),
+                  child: const Icon(Icons.favorite_border)),
+              const SizedBox(
+                height: 10.0,
+              ),
             ],
           ),
         ],
