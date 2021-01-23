@@ -36,8 +36,11 @@ class _$Injector extends Injector {
     final KiwiContainer container = KiwiContainer();
     container.registerFactory(
         (c) => MovieRemoteDatasource(client: c<MovieRestClient>()));
-    container.registerFactory<MovieRepository>((c) =>
-        MovieRepositoryImpl(remoteDatasource: c<MovieRemoteDatasource>()));
+    container.registerFactory((c) => MovieCacheDatasource(c<Prefs>()));
+    container.registerFactory<MovieRepository>((c) => MovieRepositoryImpl(
+        remoteDatasource: c<MovieRemoteDatasource>(),
+        cacheDatasource: c<MovieCacheDatasource>(),
+        networkInfo: c<NetworkInfoI>()));
     container.registerFactory((c) => GetRemoteMovie(c<MovieRepository>()));
   }
 

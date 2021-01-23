@@ -3,6 +3,7 @@ import 'package:kiwi/kiwi.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
 import 'package:prospera_exercise/app/core/services/location.dart';
+import 'package:prospera_exercise/app/features/movie/data/datasources/local/movie_cache_datasource.dart';
 
 import 'package:prospera_exercise/app/features/weather/data/api/weather_api.dart';
 import 'package:prospera_exercise/app/features/weather/data/datasources/local/weather_city_cache_datasource.dart';
@@ -93,6 +94,7 @@ abstract class Injector {
 
   // Register Movie module Factories
   @Register.factory(MovieRemoteDatasource)
+  @Register.factory(MovieCacheDatasource)
   @Register.factory(MovieRepository, from: MovieRepositoryImpl)
   @Register.factory(GetRemoteMovie)
   void _configureMovieModuleFactories();
