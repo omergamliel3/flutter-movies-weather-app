@@ -1,23 +1,41 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:location/location.dart';
 import 'package:meta/meta.dart';
+import 'package:prospera_exercise/app/core/errors/failure.dart';
+import 'package:prospera_exercise/app/core/services/location.dart';
 
-import '../../../weather/domain/usecases/get_remote_weather_city.dart';
+import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_coords.dart';
 
 import 'state.dart';
 
+const ERROR_MSG = 'Device location is unknown';
+
 class WeatherViewController extends Cubit<WeatherState> {
-  WeatherViewController({@required this.getRemoteWeatherByCity})
-      : super(const Initial());
+  WeatherViewController({
+    @required this.getRemoteWeatherByCoords,
+  }) : super(const Initial());
 
-  final GetRemoteWeatherByCity getRemoteWeatherByCity;
+  final GetRemoteWeatherByCoords getRemoteWeatherByCoords;
+
   Future<void> getWeather() async {
+    // emit loading state
     emit(const Loading());
-    final result =
-        await getRemoteWeatherByCity.call(const Params(city: 'London'));
+    // get device location
+    final location = await LocationService.getDeviceLocation();
+    // emit error state if location is null
+    if (location == null) {
+      emit(const Error(Failure(ERROR_MSG)));
+    } else {
+      // get weather data by device location coords
+      final result = await getRemoteWeatherByCoords.call(Params(
+        lat: location.latitude,
+        lon: location.longitude,
+      ));
 
-    emit(result.fold(
-      (failure) => Error(failure),
-      (weather) => Success(weather),
-    ));
+      emit(result.fold(
+        (failure) => Error(failure),
+        (weather) => Success(weather),
+      ));
+    }
   }
 }
