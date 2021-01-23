@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:location/location.dart';
 import 'package:meta/meta.dart';
 import 'package:prospera_exercise/app/core/errors/failure.dart';
 import 'package:prospera_exercise/app/core/services/location.dart';

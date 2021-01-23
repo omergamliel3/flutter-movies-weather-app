@@ -38,9 +38,10 @@ class WeatherRemoteDatasource {
         return const Left(Failure(ERROR_MSG));
       }
 
-      if (lat != weather.lat || lon != weather.lon) {
-        return const Left(Failure(INVALID_COORDS));
-      }
+      // if (lat != weather.lat || lon != weather.lon) {
+      //   return const Left(Failure(INVALID_COORDS));
+      // }
+
       // save current coords weather in local cache (prefs)
       await coordsCacheDatasource.saveCoordsCacheWeather(weather);
       // return the weather model object

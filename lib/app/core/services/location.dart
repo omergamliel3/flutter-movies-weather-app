@@ -1,33 +1,41 @@
-import 'package:location/location.dart';
+import 'package:geolocator/geolocator.dart';
 
 abstract class LocationService {
-  static Future<LocationData> getDeviceLocation() async {
-    final location = Location();
+  /// Determine the current position of the device.
+  ///
+  /// When the location services are not enabled or permissions
+  /// are denied the `Future` will return null.
+  static Future<Position> getDeviceLocation() async {
+    try {
+      bool serviceEnabled;
+      LocationPermission permission;
 
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
-    LocationData _locationData;
-
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
+      serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
         return null;
       }
-    }
 
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
+      permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.deniedForever) {
         return null;
       }
-    }
 
-    _locationData = await location.getLocation();
-    if (_locationData == null) {
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission != LocationPermission.whileInUse &&
+            permission != LocationPermission.always) {
+          return null;
+        }
+      }
+
+      final position = await Geolocator.getCurrentPosition();
+      if (position == null) {
+        return null;
+      }
+      return position;
+    } catch (e) {
+      print(e);
       return null;
     }
-    return _locationData;
   }
 }

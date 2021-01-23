@@ -2,18 +2,18 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 class Weather extends Equatable {
-  final double lat;
-  final double lon;
-  final String name;
-  final String main;
-  final String description;
-  final double temp;
-  final int feelsLike;
-  final double tempMin;
-  final double tempMax;
-  final int humidity;
-  final double windSpeed;
-  final int windDeg;
+  final dynamic lat;
+  final dynamic lon;
+  final dynamic name;
+  final dynamic main;
+  final dynamic description;
+  final dynamic temp;
+  final dynamic feelsLike;
+  final dynamic tempMin;
+  final dynamic tempMax;
+  final dynamic humidity;
+  final dynamic windSpeed;
+  final dynamic windDeg;
 
   const Weather({
     @required this.lat,
