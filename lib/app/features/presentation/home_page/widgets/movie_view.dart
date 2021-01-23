@@ -53,12 +53,25 @@ class MovieView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.all(4.0),
-      itemCount: movies.length,
-      itemBuilder: (context, index) {
-        return KeepAliveWrapper(child: buildMovieCard(movies[index]));
-      },
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          alignment: Alignment.center,
+          child: const Text(
+            'IMDB TOP RATED MOVIES',
+            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 23),
+          ),
+        ),
+        Expanded(
+            child: ListView.builder(
+          padding: const EdgeInsets.all(4.0),
+          itemCount: movies.length,
+          itemBuilder: (context, index) {
+            return KeepAliveWrapper(child: buildMovieCard(movies[index]));
+          },
+        ))
+      ],
     );
   }
 }
