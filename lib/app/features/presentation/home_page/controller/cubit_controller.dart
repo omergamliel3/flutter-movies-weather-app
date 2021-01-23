@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prospera_exercise/app/features/movie/domain/entities/movie.dart';
 
@@ -38,43 +37,28 @@ const MOVIE_TITLES = <String>[
 class HomeViewController extends Cubit<HomeState> {
   HomeViewController(
     this.networkInfo,
-    this.getRemoteMovie,
+    this.getMovie,
   ) : super(const Initial());
 
   NetworkInfoI networkInfo;
-  GetRemoteMovie getRemoteMovie;
+  GetMovie getMovie;
 
   Future<void> getMovies() async {
     // movies list
     final movies = <Movie>[];
     // emit loading state
     emit(const Loading());
-    // check connectivity
-    final connectivity = await networkInfo.isConnected();
-    if (!connectivity) {
-      await Future.delayed(const Duration(seconds: 1));
-      waitForConnectivityAndCallGetMovies();
-      // emit error state (failed to get movies)
-      emit(const Error(Failure(ERROR_MSG)));
-    } else {
-      for (final title in MOVIE_TITLES) {
-        final failureOrMovie = await getRemoteMovie.call(Params(movie: title));
-        failureOrMovie.fold(
-          (failure) => print(failure.message),
-          (movie) => movies.add(movie),
-        );
-      }
-      emit(Success(movies));
+    for (final title in MOVIE_TITLES) {
+      final failureOrMovie = await getMovie.call(Params(movie: title));
+      failureOrMovie.fold(
+        (failure) => print(failure.message),
+        (movie) => movies.add(movie),
+      );
     }
-  }
-
-  void waitForConnectivityAndCallGetMovies() {
-    StreamSubscription subscription;
-    subscription = networkInfo.onConnectivityChanged.listen((event) {
-      if (event != ConnectivityResult.none) {
-        subscription.cancel();
-        getMovies();
-      }
-    });
+    if (movies.isNotEmpty) {
+      emit(Success(movies));
+    } else {
+      emit(const Error(Failure(ERROR_MSG)));
+    }
   }
 }

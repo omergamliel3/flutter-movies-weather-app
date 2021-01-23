@@ -96,7 +96,7 @@ abstract class Injector {
   @Register.factory(MovieRemoteDatasource)
   @Register.factory(MovieCacheDatasource)
   @Register.factory(MovieRepository, from: MovieRepositoryImpl)
-  @Register.factory(GetRemoteMovie)
+  @Register.factory(GetMovie)
   void _configureMovieModuleFactories();
 
   // Weather module

@@ -11,6 +11,7 @@ import 'package:prospera_exercise/app/features/movie/domain/repositories/movie_r
 import '../datasources/remote/movie_remote_datasource.dart';
 
 const ERROR_MSG = 'Something went wrong';
+const NO_INTERNET_MSG = 'There is no internet connection';
 
 class MovieRepositoryImpl implements MovieRepository {
   MovieRepositoryImpl({
@@ -24,14 +25,19 @@ class MovieRepositoryImpl implements MovieRepository {
   final NetworkInfoI networkInfo;
 
   @override
-  Future<Either<Failure, Movie>> getRemoteMovie(String movie) async {
+  Future<Either<Failure, Movie>> getMovie(String movie) async {
     try {
-      //! check for internet connection
-      //! if not connected, try to get movie data from local cache
+      //! first, try to get movie from local cache data source
+      final failureOrMovie = await cacheDatasource.getMovie(movie);
+      if (failureOrMovie.isRight()) {
+        return failureOrMovie;
+      }
+      //! second, checks for internet connection and return failure if there is not
       final connection = await networkInfo.isConnected();
       if (!connection) {
-        return cacheDatasource.getMovie(movie);
+        return const Left(Failure(NO_INTERNET_MSG));
       }
+      //! third, try to get movie from remote data source
       final response = await remoteDatasource.getMovie(movie);
       return response.fold((failure) => Left(failure), (movie) {
         //! cache movie model data in cache data source

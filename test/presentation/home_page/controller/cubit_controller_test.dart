@@ -10,11 +10,11 @@ import 'package:prospera_exercise/app/features/presentation/home_page/controller
 
 class MockNetworkInfo extends Mock implements NetworkInfoI {}
 
-class MockGetRemoteMovie extends Mock implements GetRemoteMovie {}
+class MockGetRemoteMovie extends Mock implements GetMovie {}
 
 void main() {
   NetworkInfoI networkInfo;
-  GetRemoteMovie getRemoteMovie;
+  GetMovie getRemoteMovie;
   HomeViewController cubitController;
 
   setUp(() {

@@ -9,12 +9,12 @@ import '../entities/movie.dart';
 
 import '../repositories/movie_repository.dart';
 
-class GetRemoteMovie implements UseCase<Movie, Params> {
+class GetMovie implements UseCase<Movie, Params> {
   final MovieRepository repository;
-  GetRemoteMovie(this.repository);
+  GetMovie(this.repository);
   @override
   Future<Either<Failure, Movie>> call(Params params) async {
-    return repository.getRemoteMovie(params.movie);
+    return repository.getMovie(params.movie);
   }
 }
 

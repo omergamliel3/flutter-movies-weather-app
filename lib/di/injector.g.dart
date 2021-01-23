@@ -23,7 +23,7 @@ class _$Injector extends Injector {
     container.registerFactory((c) => LoadingViewController());
     container.registerFactory((c) => MainViewController());
     container.registerFactory(
-        (c) => HomeViewController(c<NetworkInfoI>(), c<GetRemoteMovie>()));
+        (c) => HomeViewController(c<NetworkInfoI>(), c<GetMovie>()));
     container.registerFactory((c) => SearchViewController());
     container.registerFactory((c) => SavedViewController());
     container.registerFactory((c) => WeatherViewController(
@@ -41,7 +41,7 @@ class _$Injector extends Injector {
         remoteDatasource: c<MovieRemoteDatasource>(),
         cacheDatasource: c<MovieCacheDatasource>(),
         networkInfo: c<NetworkInfoI>()));
-    container.registerFactory((c) => GetRemoteMovie(c<MovieRepository>()));
+    container.registerFactory((c) => GetMovie(c<MovieRepository>()));
   }
 
   @override
