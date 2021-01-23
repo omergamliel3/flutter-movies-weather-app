@@ -1,6 +1,10 @@
+import 'dart:async';
+
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:prospera_exercise/app/core/errors/failure.dart';
+import 'package:prospera_exercise/app/core/network/network_info.dart';
 import 'package:prospera_exercise/app/core/services/location.dart';
 
 import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_coords.dart';
@@ -12,9 +16,11 @@ const ERROR_MSG = 'Device location is unknown';
 class WeatherViewController extends Cubit<WeatherState> {
   WeatherViewController({
     @required this.getRemoteWeatherByCoords,
+    @required this.networkInfo,
   }) : super(const Initial());
 
   final GetRemoteWeatherByCoords getRemoteWeatherByCoords;
+  final NetworkInfoI networkInfo;
 
   Future<void> getWeather() async {
     // emit loading state
@@ -36,5 +42,15 @@ class WeatherViewController extends Cubit<WeatherState> {
         (weather) => Success(weather),
       ));
     }
+  }
+
+  void waitForConnectivityAndCallGetMovies() {
+    StreamSubscription subscription;
+    subscription = networkInfo.onConnectivityChanged.listen((event) {
+      if (event != ConnectivityResult.none) {
+        subscription.cancel();
+        getWeather();
+      }
+    });
   }
 }
