@@ -48,6 +48,8 @@ class HomeViewController extends Cubit<HomeState> {
     final movies = <Movie>[];
     // emit loading state
     emit(const Loading());
+
+    // get all movies data
     for (final title in MOVIE_TITLES) {
       final failureOrMovie = await getMovie.call(Params(movie: title));
       failureOrMovie.fold(
@@ -55,9 +57,13 @@ class HomeViewController extends Cubit<HomeState> {
         (movie) => movies.add(movie),
       );
     }
+
+    // emit success state if movies is not empty
     if (movies.isNotEmpty) {
       emit(Success(movies));
-    } else {
+    }
+    // emit error state if movies is empty
+    else {
       emit(const Error(Failure(ERROR_MSG)));
     }
   }
