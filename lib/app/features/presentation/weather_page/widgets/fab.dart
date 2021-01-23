@@ -8,6 +8,6 @@ class FAB extends StatelessWidget {
     return FloatingActionButton(
         onPressed: () =>
             BlocProvider.of<WeatherViewController>(context).getWeather(),
-        child: const Icon(Icons.touch_app));
+        child: const Icon(Icons.refresh));
   }
 }
