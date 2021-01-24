@@ -1,6 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:prospera_exercise/app/core/errors/failure.dart';
-import 'package:prospera_exercise/app/features/weather/domain/entities/weather.dart';
+
+import '../../../../core/errors/failure.dart';
+
+import '../entities/weather.dart';
 
 abstract class WeatherRepository {
   // todo: merge methods to one (getweatherbycoords and getweatherbycity)

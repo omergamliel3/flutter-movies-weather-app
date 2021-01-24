@@ -1,30 +1,29 @@
 import 'package:kiwi/kiwi.dart';
-
 import 'package:connectivity/connectivity.dart';
 import 'package:dio/dio.dart';
-import 'package:prospera_exercise/app/core/services/location.dart';
-import 'package:prospera_exercise/app/features/movie/data/datasources/local/movie_cache_datasource.dart';
 
-import 'package:prospera_exercise/app/features/weather/data/api/weather_api.dart';
-import 'package:prospera_exercise/app/features/weather/data/datasources/local/weather_city_cache_datasource.dart';
-import '../app/features/movie/data/api/movie_api.dart';
-
-import 'package:prospera_exercise/app/features/weather/data/datasources/local/weather_coords_cache_datasource.dart';
-import 'package:prospera_exercise/app/features/weather/data/datasources/remote/weather_remote_datasource.dart';
-import 'package:prospera_exercise/app/features/weather/data/repositories/weather_repository_impl.dart';
-
-import 'package:prospera_exercise/app/features/weather/domain/repositories/weather_repository.dart';
-import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_city.dart';
-import 'package:prospera_exercise/app/features/weather/domain/usecases/get_remote_weather_coords.dart';
-import 'package:prospera_exercise/app/features/movie/domain/repositories/movie_repository.dart';
-import 'package:prospera_exercise/app/features/movie/domain/usecases/get_remote_movie.dart';
-
-import 'package:prospera_exercise/app/features/movie/data/datasources/remote/movie_remote_datasource.dart';
-import 'package:prospera_exercise/app/features/movie/data/repositories/movie_repository_impl.dart';
-
+import '../app/core/services/location.dart';
 import '../app/core/network/network_info.dart';
-import 'package:prospera_exercise/app/core/services/prefs.dart';
+import '../app/core/services/prefs.dart';
 import '../app/theme/theme_provider.dart';
+
+import '../app/features/weather/data/datasources/local/weather_coords_cache_datasource.dart';
+import '../app/features/weather/data/datasources/remote/weather_remote_datasource.dart';
+import '../app/features/weather/data/repositories/weather_repository_impl.dart';
+import '../app/features/weather/data/api/weather_api.dart';
+import '../app/features/weather/data/datasources/local/weather_city_cache_datasource.dart';
+
+import '../app/features/weather/domain/repositories/weather_repository.dart';
+import '../app/features/weather/domain/usecases/get_remote_weather_city.dart';
+import '../app/features/weather/domain/usecases/get_remote_weather_coords.dart';
+
+import '../app/features/movie/data/datasources/local/movie_cache_datasource.dart';
+import '../app/features/movie/data/api/movie_api.dart';
+import '../app/features/movie/data/datasources/remote/movie_remote_datasource.dart';
+import '../app/features/movie/data/repositories/movie_repository_impl.dart';
+
+import '../app/features/movie/domain/repositories/movie_repository.dart';
+import '../app/features/movie/domain/usecases/get_remote_movie.dart';
 
 import '../app/features/presentation/home_page/controller/cubit_controller.dart';
 import '../app/features/presentation/loading_page/controller/cubit_controller.dart';
