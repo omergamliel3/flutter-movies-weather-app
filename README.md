@@ -9,7 +9,7 @@ A Prospera coding interview exercise
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/zubairehman/flutter-boilerplate-project.git
+https://github.com/omergamliel3/prospera-exercise.git
 ```
 
 **Step 2:**
@@ -32,6 +32,14 @@ or watch command in order to keep the source code synced automatically:
 
 ```
 flutter packages pub run build_runner watch
+```
+
+**Step 4:**
+
+Execute the following command to run the app (you must have an open android / ios Emulator)
+
+```
+flutter run -t lib/main/main_dev.dart
 ```
 
 <br />
