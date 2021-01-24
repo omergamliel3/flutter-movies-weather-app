@@ -13,16 +13,13 @@ class ImageHandlerWidget extends StatelessWidget {
     return KeepAliveWrapper(
       child: ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(8.0)),
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: FadeInImage.assetNetwork(
-              fit: BoxFit.cover,
-              fadeInDuration: const Duration(milliseconds: 500),
-              placeholder: placeholderAsset,
-              image: urlToImage ?? '',
-              imageErrorBuilder: (context, obj, error) =>
-                  const AssetImageWidget(),
-            ),
+          child: FadeInImage.assetNetwork(
+            fit: BoxFit.cover,
+            fadeInDuration: const Duration(milliseconds: 500),
+            placeholder: placeholderAsset,
+            image: urlToImage ?? '',
+            imageErrorBuilder: (context, obj, error) =>
+                const AssetImageWidget(),
           )),
     );
   }

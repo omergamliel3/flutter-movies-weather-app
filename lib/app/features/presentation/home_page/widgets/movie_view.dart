@@ -12,13 +12,17 @@ class MovieView extends StatelessWidget {
         style: TextStyle(fontWeight: FontWeight.bold));
   }
 
-  Widget buildMovieCard(Movie movie) {
+  Widget buildMovieCard(BuildContext context, Movie movie) {
     const bold = TextStyle(fontWeight: FontWeight.bold);
     return Card(
       elevation: 4.0,
       child: Column(
         children: [
-          ImageHandlerWidget(urlToImage: movie.poster),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.5,
+            width: double.infinity,
+            child: ImageHandlerWidget(urlToImage: movie.poster),
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: Column(
@@ -101,13 +105,6 @@ class MovieView extends StatelessWidget {
                 const SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                    alignment: Alignment.topRight,
-                    padding: const EdgeInsets.only(right: 10),
-                    child: const Icon(Icons.favorite_border)),
-                const SizedBox(
-                  height: 10.0,
-                ),
               ],
             ),
           ),
@@ -118,25 +115,12 @@ class MovieView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // Container(
-        //   padding: const EdgeInsets.symmetric(vertical: 4.0),
-        //   alignment: Alignment.center,
-        //   child: const Text(
-        //     'IMDB TOP RATED MOVIES',
-        //     style: TextStyle(fontWeight: FontWeight.normal, fontSize: 23),
-        //   ),
-        // ),
-        Expanded(
-            child: ListView.builder(
-          padding: const EdgeInsets.all(4.0),
-          itemCount: movies.length,
-          itemBuilder: (context, index) {
-            return KeepAliveWrapper(child: buildMovieCard(movies[index]));
-          },
-        ))
-      ],
+    return ListView.builder(
+      padding: const EdgeInsets.all(4.0),
+      itemCount: movies.length,
+      itemBuilder: (context, index) {
+        return KeepAliveWrapper(child: buildMovieCard(context, movies[index]));
+      },
     );
   }
 }
