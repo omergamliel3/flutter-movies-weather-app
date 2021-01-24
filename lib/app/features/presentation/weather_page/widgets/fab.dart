@@ -6,6 +6,7 @@ class FAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+        heroTag: 'weather_fab',
         onPressed: () =>
             BlocProvider.of<WeatherViewController>(context).getWeather(),
         child: const Icon(Icons.refresh));
