@@ -2,7 +2,7 @@
 
 A Prospera coding interview exercise
 
-## How to Use 
+## How to Use
 
 **Step 1:**
 
@@ -14,10 +14,10 @@ https://github.com/omergamliel3/prospera-exercise.git
 
 **Step 2:**
 
-Go to project root and execute the following command in console to get the required dependencies: 
+Go to project root and execute the following command in console to get the required dependencies:
 
 ```
-flutter pub get 
+flutter pub get
 ```
 
 **Step 3:**
@@ -45,6 +45,11 @@ flutter run -t lib/main/main_dev.dart
 <br />
 <br />
 
+## Screenshots
+
+<br />
+<br />
+
 ## Technologies
 
 ### Architecture
@@ -67,11 +72,11 @@ flutter run -t lib/main/main_dev.dart
 
 ### Front-end
 
-- **Flutter SDK**
-- **Kiwi (di)**
-- **Sailor (navigation manager)**
-- **Bloc (state managment)**
-- **Retrofit (API integration)**
+- **[Flutter SDK (front-end framework)](https://github.com/flutter/flutter)**
+- **[Kiwi (dependency injection)](https://github.com/vanlooverenkoen/kiwi)**
+- **[Sailor (navigation manager)](https://pub.dev/packages/sailor)**
+- **[Bloc (event driven state managment)](https://github.com/felangel/bloc/tree/master/packages/flutter_bloc)**
+- **[Retrofit (API integration)](https://github.com/trevorwang/retrofit.dart/)**
 
 ### Back-end
 
