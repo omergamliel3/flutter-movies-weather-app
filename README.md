@@ -54,8 +54,8 @@ flutter run -t lib/main/main_dev.dart
 
 ### Architecture
 
-- **Test-driven-design style**
-- **MVC**
+- **[Test-driven-design style](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course)**
+- **[MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)**
 
 <br />
 <br />
