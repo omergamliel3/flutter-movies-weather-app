@@ -13,7 +13,7 @@ import '../../index.dart';
 
 class MainView extends StatelessWidget {
   final _pageController = PageController();
-  final _pages = <Widget>[HomeView(), SearchView(), WeatherView()];
+  final _pages = <Widget>[HomeView(), WeatherView()];
 
   PreferredSizeWidget appBar(BuildContext context) {
     return AppBar(
@@ -26,6 +26,17 @@ class MainView extends StatelessWidget {
           Text(AppLocalizations.of(context).translate(APP_TITLE))
         ],
       ),
+      actions: [
+        IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () => showSearch(
+                  context: context,
+                  delegate: null,
+                )),
+        const SizedBox(
+          width: 10.0,
+        ),
+      ],
     );
   }
 

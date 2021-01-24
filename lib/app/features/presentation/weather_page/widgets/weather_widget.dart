@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:prospera_exercise/app/core/widgets/index.dart';
 import 'package:prospera_exercise/app/features/weather/domain/entities/weather.dart';
 
+const DAYS_OF_WEEK = <String>['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 class WeatherWidget extends StatelessWidget {
   final Weather weather;
   const WeatherWidget(this.weather);
   @override
   Widget build(BuildContext context) {
-    const style = TextStyle(fontSize: 25);
+    const style = TextStyle(fontSize: 22);
+    const bold = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+    final currentDay = DateTime.now().weekday - 1;
+
     return KeepAliveWrapper(
       child: Center(
         child: Card(
+          color: Colors.cyan,
           elevation: 4.0,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -18,38 +24,75 @@ class WeatherWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  'Location: ${weather.name}',
-                  style: style,
+                // location and temp row
+                Row(
+                  children: [
+                    const Icon(Icons.place),
+                    Text(
+                      ' ${weather.name}',
+                      style: style,
+                    ),
+                    const Spacer(),
+                    Text(
+                      '${weather.temp}\u00b0',
+                      style: bold,
+                    )
+                  ],
                 ),
                 const SizedBox(
-                  height: 10.0,
+                  height: 30,
                 ),
-                Text(
-                  'Weather: ${weather.main}',
-                  style: style,
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  'Desc: ${weather.description}',
-                  style: style,
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  'Temp: ${weather.temp}',
-                  style: style,
+                // weather description row
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.cloud_rounded),
+                    Text(
+                      '   ${weather.description}',
+                      style: bold,
+                    )
+                  ],
                 ),
                 const SizedBox(
-                  height: 10.0,
+                  height: 30.0,
                 ),
-                Text(
-                  'Humidity: ${weather.humidity}',
-                  style: style,
+                // feels like and humidity row
+                Row(
+                  children: [
+                    Text(
+                      'FEELS LIKE:\n${weather.feelsLike}\u00b0',
+                      style: style,
+                    ),
+                    const Spacer(),
+                    Text(
+                      'HUMITIDY:\n${weather.humidity}',
+                      style: style,
+                    )
+                  ],
                 ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                // days of week row
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: List<Widget>.generate(
+                      7,
+                      (index) => Container(
+                            height: 45,
+                            width: 45,
+                            color: currentDay == index
+                                ? null
+                                : Colors.blueGrey.withOpacity(0.8),
+                            child: Center(
+                              child: Text(
+                                DAYS_OF_WEEK[index],
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          )),
+                )
               ],
             ),
           ),

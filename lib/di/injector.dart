@@ -29,8 +29,6 @@ import '../app/theme/theme_provider.dart';
 import '../app/features/presentation/home_page/controller/cubit_controller.dart';
 import '../app/features/presentation/loading_page/controller/cubit_controller.dart';
 import '../app/features/presentation/main_page/controller/cubit_controller.dart';
-import '../app/features/presentation/saved_page/controller/cubit_controller.dart';
-import '../app/features/presentation/search_page/controller/cubit_controller.dart';
 import '../app/features/presentation/weather_page/controller/cubit_controller.dart';
 
 part 'injector.g.dart';
@@ -76,8 +74,6 @@ abstract class Injector {
   @Register.factory(LoadingViewController)
   @Register.factory(MainViewController)
   @Register.factory(HomeViewController)
-  @Register.factory(SearchViewController)
-  @Register.factory(SavedViewController)
   @Register.factory(WeatherViewController)
   void _configureControllers();
 

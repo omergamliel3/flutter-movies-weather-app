@@ -26,10 +26,8 @@ class NavBar extends StatelessWidget {
           items: [
             const BottomNavigationBarItem(
                 icon: Icon(Icons.movie), label: 'Movies'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: 'Search'),
             BottomNavigationBarItem(
-                icon: state.index == 2
+                icon: state.index == 1
                     ? const Icon(Icons.cloud)
                     : const Icon(Icons.cloud_queue),
                 label: 'Weather'),

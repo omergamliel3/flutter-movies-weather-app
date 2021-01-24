@@ -49,3 +49,5 @@ trash
 
 # ignore env 
 .env*
+
+trash
