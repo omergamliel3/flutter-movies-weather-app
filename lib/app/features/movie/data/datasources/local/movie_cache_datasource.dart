@@ -23,6 +23,7 @@ class MovieCacheDatasource {
       for (final cacheMovie in cacheMovies) {
         final movie = MovieModel.fromJson(
             json.decode(cacheMovie) as Map<String, dynamic>);
+
         if (movie.title.toLowerCase() == title.toLowerCase()) {
           return Right(movie);
         }

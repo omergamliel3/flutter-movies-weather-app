@@ -26,29 +26,7 @@ class MainView extends StatelessWidget {
           Text(AppLocalizations.of(context).translate(APP_TITLE))
         ],
       ),
-      actions: [
-        BlocBuilder<MainViewController, MainState>(
-          builder: (context, state) {
-            if (state.index == 0) {
-              return buildSearch(context);
-            }
-            return Container();
-          },
-        ),
-        const SizedBox(
-          width: 10.0,
-        ),
-      ],
     );
-  }
-
-  Widget buildSearch(BuildContext context) {
-    return IconButton(
-        icon: const Icon(Icons.search),
-        onPressed: () => showSearch(
-              context: context,
-              delegate: CustomSearchDelegate(),
-            ));
   }
 
   @override

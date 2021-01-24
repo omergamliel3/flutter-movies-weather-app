@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prospera_exercise/app/core/widgets/index.dart';
 
 import 'package:prospera_exercise/di/injector.dart';
+import 'package:prospera_exercise/localization/app_localizations.dart';
 
 import '../controller/index.dart';
 
@@ -19,15 +20,15 @@ class LoadingView extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(
+              children: [
+                const Icon(
                   Icons.movie,
                   size: 50,
                 ),
-                SizedBox(width: 15.0),
+                const SizedBox(width: 15.0),
                 Text(
-                  'Prospera',
-                  style: TextStyle(
+                  AppLocalizations.of(context).translate(APP_TITLE),
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),

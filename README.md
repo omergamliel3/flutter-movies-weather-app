@@ -36,7 +36,7 @@ flutter packages pub run build_runner watch
 
 **Step 4:**
 
-Execute the following command to run the app (you must have an open android emulator)
+Execute the following command to run the app (you must have an open android emulator):
 
 ```
 flutter run -t lib/main/main_dev.dart

@@ -15,6 +15,11 @@ class MovieView extends StatelessWidget {
   Widget buildMovieCard(BuildContext context, Movie movie) {
     const bold = TextStyle(fontWeight: FontWeight.bold);
     return Card(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(12.0))),
+      margin: const EdgeInsets.symmetric(
+        vertical: 15.0,
+      ),
       elevation: 4.0,
       child: Column(
         children: [
@@ -24,7 +29,7 @@ class MovieView extends StatelessWidget {
             child: ImageHandlerWidget(urlToImage: movie.poster),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 8.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
