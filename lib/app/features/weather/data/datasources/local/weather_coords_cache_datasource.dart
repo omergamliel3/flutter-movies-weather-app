@@ -7,7 +7,7 @@ import 'package:prospera_exercise/app/core/services/prefs.dart';
 import 'package:prospera_exercise/app/features/weather/data/models/weather_model.dart';
 
 const ERROR_MSG = 'Something went wrong';
-const NO_INTERNET_MSG = 'There is no internet connection';
+const NO_INTERNET_MSG = 'Device offline';
 const WEATHER_CACHE_KEY = 'weather_cache';
 
 // Weather coords local data source to

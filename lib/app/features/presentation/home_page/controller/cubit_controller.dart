@@ -11,7 +11,7 @@ import 'package:prospera_exercise/app/core/network/network_info.dart';
 import 'index.dart';
 import 'state.dart';
 
-const ERROR_MSG = 'No internet connection';
+const ERROR_MSG = 'Device offline';
 
 const MOVIE_TITLES = <String>[
   'The Shawshank Redemption',

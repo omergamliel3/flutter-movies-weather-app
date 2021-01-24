@@ -11,7 +11,7 @@ import 'package:prospera_exercise/app/features/movie/domain/repositories/movie_r
 import '../datasources/remote/movie_remote_datasource.dart';
 
 const ERROR_MSG = 'Something went wrong';
-const NO_INTERNET_MSG = 'There is no internet connection';
+const NO_INTERNET_MSG = 'Device offline';
 
 class MovieRepositoryImpl implements MovieRepository {
   MovieRepositoryImpl({
