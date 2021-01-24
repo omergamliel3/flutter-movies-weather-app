@@ -47,11 +47,11 @@ flutter run -t lib/main/main_dev.dart
 
 ## Screenshots
 
-<img src="screenshots/splash_screenshot.png">
-<img src="screenshots/loading_screenshot.png"/>
-<img src="screenshots/movies_screenshot.png"/>
-<img src="screenshots/weather_screenshot.png"/>
-<img src="screenshots/offline_screenshot.png"/> 
+<img src="screenshots/splash_screenshot.png" width="300px">
+<img src="screenshots/loading_screenshot.png" width="300px"/>
+<img src="screenshots/movies_screenshot.png" width="300px"/>
+<img src="screenshots/weather_screenshot.png" width="300px" />
+<img src="screenshots/offline_screenshot.png" width="300px"/> 
 
 <br />
 <br />
