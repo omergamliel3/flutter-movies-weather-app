@@ -54,7 +54,7 @@ flutter run -t lib/main/main_dev.dart
 <br />
 <br />
 
-## Technologies
+## Software design
 
 ### Design Patterns
 
@@ -74,6 +74,8 @@ flutter run -t lib/main/main_dev.dart
 <br />
 <br />
 
+
+## Technologies
 
 ### Front-end
 
