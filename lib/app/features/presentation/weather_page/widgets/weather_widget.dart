@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prospera_exercise/app/core/widgets/index.dart';
-import 'package:prospera_exercise/app/features/weather/domain/entities/weather.dart';
+
+import '../../../../core/widgets/index.dart';
+import '../../../weather/domain/entities/weather.dart';
 
 const DAYS_OF_WEEK = <String>['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
@@ -79,16 +80,18 @@ class WeatherWidget extends StatelessWidget {
                   children: List<Widget>.generate(
                       7,
                       (index) => Container(
-                            height: 45,
-                            width: 45,
-                            color: currentDay == index
-                                ? null
-                                : Colors.blueGrey.withOpacity(0.8),
-                            child: Center(
-                              child: Text(
-                                DAYS_OF_WEEK[index],
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
+                            height: 50,
+                            width: 50,
+                            child: Card(
+                              color: currentDay == index
+                                  ? null
+                                  : Colors.transparent,
+                              child: Center(
+                                child: Text(
+                                  DAYS_OF_WEEK[index],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           )),
