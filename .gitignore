@@ -45,7 +45,6 @@ prospera_exercise.iml
 .packages
 .metadata
 private
-trash
 
 # ignore env 
 .env*
