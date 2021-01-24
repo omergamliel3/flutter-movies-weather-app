@@ -47,35 +47,11 @@ flutter run -t lib/main/main_dev.dart
 
 ## Screenshots
 
-```
-splash view:
-```
-
-<img src="screenshots/splash_screenshot.png" width="240px">
-
-```
-loading view:
-```
-
-<img src="screenshots/loading_screenshot.png" width="240px"/>
-
-```
-movies view:
-```
-
-<img src="screenshots/movies_screenshot.png" width="240px"/>
-
-```
-weather view:
-```
-
-<img src="screenshots/weather_screenshot.png" width="240px"/>
-
-```
-no internet view:
-```
-
-<img src="screenshots/offline_screenshot.png" width="240px"/> 
+<img src="screenshots/splash_screenshot.png">
+<img src="screenshots/loading_screenshot.png"/>
+<img src="screenshots/movies_screenshot.png"/>
+<img src="screenshots/weather_screenshot.png"/>
+<img src="screenshots/offline_screenshot.png"/> 
 
 <br />
 <br />
