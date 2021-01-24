@@ -47,6 +47,8 @@ flutter run -t lib/main/main_dev.dart
 
 ## Screenshots
 
+<br />
+
 <img src="screenshots/splash_screenshot.png" width="300px">   <img src="screenshots/loading_screenshot.png" width="300px"/>   <img src="screenshots/movies_screenshot.png" width="300px"/>   <img src="screenshots/weather_screenshot.png" width="300px"/>   <img src="screenshots/offline_screenshot.png" width="300px"/> 
 
 <br />
@@ -84,6 +86,9 @@ flutter run -t lib/main/main_dev.dart
 
 - **[Weather API](https://openweathermap.org/api)**
 - **[OMDb API](http://www.omdbapi.com/)**
+
+<br />
+<br />
 
 # Author 🙋
 
