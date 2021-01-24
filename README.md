@@ -56,6 +56,11 @@ flutter run -t lib/main/main_dev.dart
 
 ## Technologies
 
+### Design Patterns
+
+- **Repository Pattern**
+- **Strategy Pattern**
+
 ### Architecture
 
 - **[Test-driven-design style](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course)**
@@ -69,10 +74,6 @@ flutter run -t lib/main/main_dev.dart
 <br />
 <br />
 
-### Design Patterns
-
-- **Repository Pattern**
-- **Strategy Pattern**
 
 ### Front-end
 
