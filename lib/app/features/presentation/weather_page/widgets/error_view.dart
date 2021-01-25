@@ -19,7 +19,7 @@ class ErrorView extends StatelessWidget {
           height: 20,
         ),
         const Icon(
-          Icons.wifi_off,
+          Icons.error,
           size: 40,
         ),
       ],
