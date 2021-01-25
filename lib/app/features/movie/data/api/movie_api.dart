@@ -5,7 +5,7 @@ import '../models/movie_model.dart';
 
 part 'movie_api.g.dart';
 
-@RestApi(baseUrl: "http://www.omdbapi.com/")
+@RestApi(baseUrl: "https://www.omdbapi.com/")
 abstract class MovieRestClient {
   factory MovieRestClient(Dio dio, {String baseUrl}) = _MovieRestClient;
 

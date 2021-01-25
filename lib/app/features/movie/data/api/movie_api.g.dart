@@ -9,7 +9,7 @@ part of 'movie_api.dart';
 class _MovieRestClient implements MovieRestClient {
   _MovieRestClient(this._dio, {this.baseUrl}) {
     ArgumentError.checkNotNull(_dio, '_dio');
-    baseUrl ??= 'http://www.omdbapi.com/';
+    baseUrl ??= 'https://www.omdbapi.com/';
   }
 
   final Dio _dio;
