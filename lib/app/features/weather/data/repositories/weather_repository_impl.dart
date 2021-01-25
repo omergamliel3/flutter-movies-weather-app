@@ -77,6 +77,9 @@ class WeatherRepositoryImpl implements WeatherRepository {
   Future<Either<Failure, Weather>> getRemoteWeatherByCoords(
       double lat, double lon) async {
     try {
+      if (lat == null || lon == null) {
+        return const Left(Failure(ERROR_MSG));
+      }
       //! check device connection
       //! if there is no connection return city cache weather data
       final connection = await networkInfo.isConnected();

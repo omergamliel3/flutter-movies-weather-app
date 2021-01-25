@@ -47,8 +47,8 @@ class WeatherViewController extends Cubit<WeatherState> {
     } else {
       // get weather data by device location coords
       final result = await getRemoteWeatherByCoords.call(Params(
-        lat: location.latitude,
-        lon: location.longitude,
+        lat: location?.latitude,
+        lon: location?.longitude,
       ));
 
       // fold result and emit state
