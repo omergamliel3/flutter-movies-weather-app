@@ -9,7 +9,7 @@ A movies and weather flutter app, focusing clean architecture development princi
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/omergamliel3/prospera-exercise.git
+https://github.com/omergamliel3/flutter-movies-weather-app.git
 ```
 
 **Step 2:**
