@@ -1,6 +1,6 @@
-# Prospera Exercise
+# Flutter Movies Weather app
 
-A Prospera coding interview exercise
+A movies and weather flutter app, focusing clean architecture development principles.
 
 ## How to Use
 
